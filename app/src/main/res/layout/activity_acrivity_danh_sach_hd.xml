@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="#F5F5F5">
+
+    <!-- Tên phòng -->
+    <TextView
+        android:id="@+id/tvTenPhong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Phòng A01"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:paddingBottom="8dp" />
+
+    <!-- Danh sách hóa đơn -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvHoaDon"
+        android:layout_width="match_parent"
+        android:layout_height="566dp"
+        android:scrollbars="vertical" />
+    <Button
+        android:id="@+id/btnQuaylai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="QUAY LẠI"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#FACC15"
+        android:textColor="@android:color/white"/>
+
+</LinearLayout>

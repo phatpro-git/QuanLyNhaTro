@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#F5F7FA">
+
+    <!-- TIÊU ĐỀ -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thêm hợp đồng"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#1E293B"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- NGÀY BẮT ĐẦU -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutNgayBD"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Ngày bắt đầu"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtNgayBatDau"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:clickable="true"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- NGÀY KẾT THÚC -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutNgayKT"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Ngày kết thúc"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintTop_toBottomOf="@id/layoutNgayBD"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtNgayKetThuc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:clickable="true"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- TRẠNG THÁI -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutTrangThai"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Trạng thái (Còn hiệu lực / Hết hạn)"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintTop_toBottomOf="@id/layoutNgayKT"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtTrangThai"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- NÚT TIẾP -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnTiep"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="LƯU HỢP ĐỒNG"
+        android:textColor="@android:color/white"
+        app:backgroundTint="#22C55E"
+        app:cornerRadius="12dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintTop_toBottomOf="@id/layoutTrangThai"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- NÚT XÓA -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnXoa"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="XÓA"
+        android:textColor="@android:color/white"
+        app:backgroundTint="#EF4444"
+        app:cornerRadius="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintTop_toBottomOf="@id/btnTiep"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

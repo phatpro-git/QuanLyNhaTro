@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_marginBottom="24dp">
+
+        <!-- TIÊU ĐỀ -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CHI TIẾT HÓA ĐƠN"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textColor="#212121"
+            android:paddingBottom="16dp"/>
+
+        <!-- CARD THÔNG TIN -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tvThangNam"
+                    android:text="Tháng: --/----"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="#000"/>
+
+                <TextView
+                    android:id="@+id/tvTienPhong"
+                    android:text="Tiền phòng: 0 đ"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/tvTienDien"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tiền điện: 0 đ"
+                    android:paddingTop="6dp"/>
+
+                <TextView
+                    android:id="@+id/tvTienNuoc"
+                    android:text="Tiền nước: 0 đ"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="6dp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E0E0E0"
+                    android:layout_marginVertical="12dp"/>
+
+                <TextView
+                    android:id="@+id/tvTongTien"
+                    android:text="TỔNG TIỀN: 0 đ"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="#D32F2F"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- TRẠNG THÁI -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trạng thái hóa đơn"
+            android:textStyle="bold"
+            android:textColor="#000"/>
+
+        <Spinner
+            android:id="@+id/spTrangThai"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"/>
+
+        <!-- NÚT -->
+        <Button
+            android:id="@+id/btnCapNhat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CẬP NHẬT TRẠNG THÁI"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#1976D2"
+            android:textColor="@android:color/white"/>
+
+        <Button
+            android:id="@+id/btnXoa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="XÓA HÓA ĐƠN"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#D32F2F"
+            android:textColor="@android:color/white"/>
+        <Button
+            android:id="@+id/btnQuaylai"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="QUAY LẠI"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#FACC15"
+            android:textColor="@android:color/white"/>
+
+    </LinearLayout>
+</ScrollView>
