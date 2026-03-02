@@ -83,7 +83,11 @@ public class add_activity extends AppCompatActivity {
         String trangThai = "Trống";
         long idPhong = mydata.addPhong(ten, gia, soDien, soNuoc, trangThai);
         if (idPhong > 0) {
-            Toast.makeText(this, "Thêm phòng trống thành công", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Thêm phòng thành công", Toast.LENGTH_SHORT).show();
+
+        } else if (idPhong == -2) {
+            Toast.makeText(this, "Tên phòng đã tồn tại!", Toast.LENGTH_SHORT).show();
+
         } else {
             Toast.makeText(this, "Thêm phòng thất bại", Toast.LENGTH_SHORT).show();
         }
@@ -114,6 +118,9 @@ public class add_activity extends AppCompatActivity {
             Intent intent = new Intent(this, AddKhachActivity.class);
             intent.putExtra("id_phong", (int) idPhong);
             startActivity(intent);
+        } else if (idPhong == -2) {
+            Toast.makeText(this, "Tên phòng đã tồn tại!", Toast.LENGTH_SHORT).show();
+
         } else {
             Toast.makeText(this, "Thêm phòng thất bại", Toast.LENGTH_SHORT).show();
         }

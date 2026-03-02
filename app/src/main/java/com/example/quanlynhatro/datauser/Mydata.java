@@ -3,6 +3,7 @@ package com.example.quanlynhatro.datauser;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteConstraintException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
@@ -74,7 +75,7 @@ public class Mydata extends SQLiteOpenHelper {
         // PHONG
         db.execSQL("CREATE TABLE " + TB_PHONG + " (" +
                 PHONG_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                PHONG_TEN + " TEXT NOT NULL, " +
+                PHONG_TEN + " TEXT NOT NULL UNIQUE, " +
                 PHONG_GIA + " INTEGER NOT NULL, " +
                 PHONG_SODIEN + " INTEGER DEFAULT 0, " +
                 PHONG_SONUOC + " INTEGER DEFAULT 0, " +
@@ -141,7 +142,13 @@ public class Mydata extends SQLiteOpenHelper {
         values.put(PHONG_SONUOC, soNuoc);
         values.put(PHONG_TRANGTHAI, trangThai);
 
-        return db.insert(TB_PHONG, null, values);
+        try {
+            return db.insertOrThrow(TB_PHONG, null, values);
+        } catch (SQLiteConstraintException e) {
+            return -2;
+        } catch (Exception e) {
+            return -1;
+        }
     }
 
     public long addKhach(String hoten, String sdt, String cccd, String que) {
