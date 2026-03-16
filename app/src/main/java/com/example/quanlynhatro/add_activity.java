@@ -17,7 +17,7 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class add_activity extends AppCompatActivity {
-    TextInputEditText edtTenPhong, edtGiaPhong, edtTrangThai, edtSoDien, edtSoNuoc;
+    TextInputEditText edtTenPhong, edtGiaPhong, edtSoDien, edtSoNuoc;
     MaterialButton btnTiep, btnThoat, btnXoa, btnThemphong;
     Mydata mydata;
     @SuppressLint("MissingInflatedId")
@@ -36,7 +36,6 @@ public class add_activity extends AppCompatActivity {
         btnXoa.setOnClickListener(v -> {
             edtTenPhong.setText("");
             edtGiaPhong.setText("");
-            edtTrangThai.setText("");
             edtSoDien.setText("");
             edtSoNuoc.setText("");
         });
@@ -53,7 +52,6 @@ public class add_activity extends AppCompatActivity {
     public  void ax(){
         edtTenPhong = findViewById(R.id.edtTenPhong);
         edtGiaPhong = findViewById(R.id.edtGiaPhong);
-        edtTrangThai = findViewById(R.id.edtTrangThai);
         btnThemphong = findViewById(R.id.btnThemphong);
         edtSoDien = findViewById(R.id.edtSoDien);
         edtSoNuoc = findViewById(R.id.edtSoNuoc);

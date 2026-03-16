@@ -17,7 +17,10 @@ import com.example.quanlynhatro.datauser.Mydata;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 public class AddHopDongActivity extends AppCompatActivity {
     TextInputEditText edtNgayBatDau, edtNgayKetThuc;
@@ -58,17 +61,30 @@ public class AddHopDongActivity extends AppCompatActivity {
         });
         // lưu hợp đồng
         btnTiep.setOnClickListener(v -> {
+
             String ngayBD = edtNgayBatDau.getText().toString().trim();
             String ngayKT = edtNgayKetThuc.getText().toString().trim();
+
             if (ngayBD.isEmpty() || ngayKT.isEmpty()) {
                 Toast.makeText(this, "Chọn ngày bắt đầu và kết thúc.", Toast.LENGTH_SHORT).show();
                 return;
             }
+            try {
+                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+                sdf.setLenient(false);
+                Date dateBD = sdf.parse(ngayBD);
+                Date dateKT = sdf.parse(ngayKT);
+                if (!dateBD.before(dateKT)) {
+                    Toast.makeText(this, "Ngày bắt đầu phải nhỏ hơn ngày kết thúc. Vui lòng chọn lại!", Toast.LENGTH_LONG).show();
+                    return;
+                }
+            } catch (Exception e) {
+                Toast.makeText(this, "Định dạng ngày không hợp lệ", Toast.LENGTH_SHORT).show();
+                return;
+            }
             String trangThaiHD = "Còn hiệu lực";
             long result = mydata.addHopDong(idPhong, idKhach, ngayBD, ngayKT, trangThaiHD);
-
             if (result > 0) {
-                // CẬP NHẬT TRẠNG THÁI PHÒNG = ĐÃ THUÊ
                 boolean ok = mydata.updateTrangThaiPhong(idPhong, "Đã thuê");
                 if (ok) {
                     Toast.makeText(this, "Thêm hợp đồng thành công", Toast.LENGTH_SHORT).show();
@@ -83,7 +99,6 @@ public class AddHopDongActivity extends AppCompatActivity {
                 Toast.makeText(this, "Thêm hợp đồng thất bại", Toast.LENGTH_SHORT).show();
             }
         });
-
     }
     public void ax(){
         edtNgayBatDau = findViewById(R.id.edtNgayBatDau);
