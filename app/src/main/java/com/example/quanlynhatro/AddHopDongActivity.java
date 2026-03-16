@@ -20,7 +20,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import java.util.Calendar;
 
 public class AddHopDongActivity extends AppCompatActivity {
-    TextInputEditText edtNgayBatDau, edtNgayKetThuc, edtTrangThai;
+    TextInputEditText edtNgayBatDau, edtNgayKetThuc;
     MaterialButton btnTiep, btnXoa;
 
     Mydata mydata;
@@ -55,16 +55,13 @@ public class AddHopDongActivity extends AppCompatActivity {
         btnXoa.setOnClickListener(v -> {
             edtNgayBatDau.setText("");
             edtNgayKetThuc.setText("");
-            edtTrangThai.setText("");
         });
         // lưu hợp đồng
         btnTiep.setOnClickListener(v -> {
             String ngayBD = edtNgayBatDau.getText().toString().trim();
             String ngayKT = edtNgayKetThuc.getText().toString().trim();
-            String trangThai = edtTrangThai.getText().toString().trim();
-
-            if (ngayBD.isEmpty() || ngayKT.isEmpty() || trangThai.isEmpty()) {
-                Toast.makeText(this, "Nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
+            if (ngayBD.isEmpty() || ngayKT.isEmpty()) {
+                Toast.makeText(this, "Chọn ngày bắt đầu và kết thúc.", Toast.LENGTH_SHORT).show();
                 return;
             }
             String trangThaiHD = "Còn hiệu lực";
@@ -91,7 +88,6 @@ public class AddHopDongActivity extends AppCompatActivity {
     public void ax(){
         edtNgayBatDau = findViewById(R.id.edtNgayBatDau);
         edtNgayKetThuc = findViewById(R.id.edtNgayKetThuc);
-        edtTrangThai = findViewById(R.id.edtTrangThai);
         btnTiep = findViewById(R.id.btnTiep);
         btnXoa = findViewById(R.id.btnXoa);
     }

@@ -170,10 +170,12 @@ public class Mydata extends SQLiteOpenHelper {
         values.put(HD_NGAYBD, ngayBatDau);
         values.put(HD_NGAYKT, ngayKetThuc);
         values.put(HD_TRANGTHAI, trangThai);
+        try{
+            return db.insert(TB_HOPDONG, null, values);
+        } catch (Exception e) {
+            return -1;
+        }
 
-        long result = db.insert(TB_HOPDONG, null, values);
-        db.close();
-        return result;
     }
     public Cursor readAllData(){
         String query = "SELECT * FROM "+TB_PHONG;
