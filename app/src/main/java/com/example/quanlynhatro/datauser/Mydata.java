@@ -141,7 +141,6 @@ public class Mydata extends SQLiteOpenHelper {
         values.put(PHONG_SODIEN, soDien);
         values.put(PHONG_SONUOC, soNuoc);
         values.put(PHONG_TRANGTHAI, trangThai);
-
         try {
             return db.insertOrThrow(TB_PHONG, null, values);
         } catch (SQLiteConstraintException e) {

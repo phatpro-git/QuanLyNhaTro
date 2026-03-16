@@ -87,7 +87,7 @@ public class add_activity extends AppCompatActivity {
 
         } else if (idPhong == -2) {
             Toast.makeText(this, "Tên phòng đã tồn tại!", Toast.LENGTH_SHORT).show();
-
+            edtTenPhong.setText("");
         } else {
             Toast.makeText(this, "Thêm phòng thất bại", Toast.LENGTH_SHORT).show();
         }
@@ -120,7 +120,7 @@ public class add_activity extends AppCompatActivity {
             startActivity(intent);
         } else if (idPhong == -2) {
             Toast.makeText(this, "Tên phòng đã tồn tại!", Toast.LENGTH_SHORT).show();
-
+            edtTenPhong.setText("");
         } else {
             Toast.makeText(this, "Thêm phòng thất bại", Toast.LENGTH_SHORT).show();
         }

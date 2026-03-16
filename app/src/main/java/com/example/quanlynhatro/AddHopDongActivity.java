@@ -67,8 +67,8 @@ public class AddHopDongActivity extends AppCompatActivity {
                 Toast.makeText(this, "Nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
                 return;
             }
-
-            long result = mydata.addHopDong(idPhong, idKhach, ngayBD, ngayKT, trangThai);
+            String trangThaiHD = "Còn hiệu lực";
+            long result = mydata.addHopDong(idPhong, idKhach, ngayBD, ngayKT, trangThaiHD);
 
             if (result > 0) {
                 // CẬP NHẬT TRẠNG THÁI PHÒNG = ĐÃ THUÊ

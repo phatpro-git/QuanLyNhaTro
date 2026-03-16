@@ -101,25 +101,6 @@
             android:layout_marginHorizontal="10dp"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Trạng thái -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/layoutTrangThai"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Trạng thái (Trống / Đã thuê)"
-        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-        app:layout_constraintTop_toBottomOf="@id/layoutSoNuoc"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtTrangThai"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"/>
-    </com.google.android.material.textfield.TextInputLayout>
-
     <!-- Nút tiếp -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnTiep"
@@ -129,10 +110,10 @@
         android:textColor="@android:color/white"
         app:backgroundTint="#22C55E"
         app:cornerRadius="12dp"
-        app:layout_constraintTop_toBottomOf="@id/layoutTrangThai"
+        app:layout_constraintTop_toBottomOf="@id/btnThemphong"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp"/>
+        android:layout_margin="10dp"/>
 
     <!-- Thêm phòng -->
     <com.google.android.material.button.MaterialButton
@@ -143,10 +124,10 @@
         android:textColor="@android:color/white"
         app:backgroundTint="#00CCFF"
         app:cornerRadius="12dp"
-        app:layout_constraintTop_toBottomOf="@id/btnTiep"
+        app:layout_constraintTop_toBottomOf="@id/layoutSoNuoc"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp"/>
+        android:layout_margin="10dp"/>
 
     <!-- Xóa -->
     <com.google.android.material.button.MaterialButton
@@ -157,10 +138,10 @@
         android:textColor="@android:color/white"
         app:backgroundTint="#EF4444"
         app:cornerRadius="12dp"
-        app:layout_constraintTop_toBottomOf="@id/btnThemphong"
+        app:layout_constraintTop_toBottomOf="@id/btnTiep"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp"/>
+        android:layout_margin="10dp"/>
 
     <!-- Thoát -->
     <com.google.android.material.button.MaterialButton
@@ -174,6 +155,6 @@
         app:layout_constraintTop_toBottomOf="@id/btnXoa"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp"/>
+        android:layout_margin="10dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
